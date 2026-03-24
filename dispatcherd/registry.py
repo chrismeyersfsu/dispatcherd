@@ -80,7 +80,7 @@ class DispatcherMethod:
         return defaults
 
     def delay(self, *args, **kwargs) -> Tuple[dict, str]:
-        return self.apply_async(args=args, kwargs=kwargs)
+        return self.apply_async(args=args, kwargs=kwargs, queue=self.queue)
 
     def get_async_body(
         self,
